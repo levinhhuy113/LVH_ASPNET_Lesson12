@@ -1,0 +1,58 @@
+﻿@model Lvh_Aspnet_Lesson12.Models.Lvh_SACH
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lvh_SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvh_TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvh_TenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvh_SoTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvh_SoTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvh_NamXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvh_NamXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvh_TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvh_TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvh_TACGIA.Lvh_TenTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvh_TACGIA.Lvh_TenTG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Lvh:Edit", "LvhEdit", new { id = Model.Lvh_MaSach }) |
+    @Html.ActionLink("Back to List", "LvhIndex")
+</p>

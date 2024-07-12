@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LeVinhHuy_2210900106ModelStoreContainer" CdmEntityContainer="LeVinhHuy_2210900106Entities">
+    <EntitySetMapping Name="Lvh_SACH">
+      <EntityTypeMapping TypeName="LeVinhHuy_2210900106Model.Lvh_SACH">
+        <MappingFragment StoreEntitySet="Lvh_SACH">
+          <ScalarProperty Name="Lvh_MaSach" ColumnName="Lvh_MaSach" />
+          <ScalarProperty Name="Lvh_TenSach" ColumnName="Lvh_TenSach" />
+          <ScalarProperty Name="Lvh_SoTrang" ColumnName="Lvh_SoTrang" />
+          <ScalarProperty Name="Lvh_NamXB" ColumnName="Lvh_NamXB" />
+          <ScalarProperty Name="Lvh_MaTG" ColumnName="Lvh_MaTG" />
+          <ScalarProperty Name="Lvh_TrangThai" ColumnName="Lvh_TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lvh_TACGIA">
+      <EntityTypeMapping TypeName="LeVinhHuy_2210900106Model.Lvh_TACGIA">
+        <MappingFragment StoreEntitySet="Lvh_TACGIA">
+          <ScalarProperty Name="Lvh_MaTG" ColumnName="Lvh_MaTG" />
+          <ScalarProperty Name="Lvh_TenTG" ColumnName="Lvh_TenTG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

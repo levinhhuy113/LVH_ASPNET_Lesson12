@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LeVinhHuy_2210900106Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lvh_SACH">
+    <Key>
+      <PropertyRef Name="Lvh_MaSach" />
+    </Key>
+    <Property Name="Lvh_MaSach" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Lvh_TenSach" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lvh_SoTrang" Type="int" />
+    <Property Name="Lvh_NamXB" Type="int" />
+    <Property Name="Lvh_MaTG" Type="nchar" MaxLength="10" />
+    <Property Name="Lvh_TrangThai" Type="bit" />
+  </EntityType>
+  <EntityType Name="Lvh_TACGIA">
+    <Key>
+      <PropertyRef Name="Lvh_MaTG" />
+    </Key>
+    <Property Name="Lvh_MaTG" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Lvh_TenTG" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Lvh_SACH_Lvh_TACGIA">
+    <End Role="Lvh_TACGIA" Type="Self.Lvh_TACGIA" Multiplicity="0..1" />
+    <End Role="Lvh_SACH" Type="Self.Lvh_SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lvh_TACGIA">
+        <PropertyRef Name="Lvh_MaTG" />
+      </Principal>
+      <Dependent Role="Lvh_SACH">
+        <PropertyRef Name="Lvh_MaTG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LeVinhHuy_2210900106ModelStoreContainer">
+    <EntitySet Name="Lvh_SACH" EntityType="Self.Lvh_SACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lvh_TACGIA" EntityType="Self.Lvh_TACGIA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Lvh_SACH_Lvh_TACGIA" Association="Self.FK_Lvh_SACH_Lvh_TACGIA">
+      <End Role="Lvh_TACGIA" EntitySet="Lvh_TACGIA" />
+      <End Role="Lvh_SACH" EntitySet="Lvh_SACH" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

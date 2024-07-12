@@ -1,0 +1,26 @@
+﻿@model Lvh_Aspnet_Lesson12.Models.Lvh_TACGIA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lvh_TACGIA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvh_TenTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvh_TenTG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Lvh_MaTG }) |
+    @Html.ActionLink("Back to List", "LvhIndex")
+</p>

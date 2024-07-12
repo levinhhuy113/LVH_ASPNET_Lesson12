@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Lvh_Aspnet_Lesson12.Models.Lvh_SACH>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Lvh:Create New", "LvhCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvh_MaSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvh_TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvh_SoTrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvh_NamXB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvh_TrangThai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvh_TACGIA.Lvh_TenTG)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lvh_MaSach)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lvh_TenSach)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lvh_SoTrang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lvh_NamXB)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lvh_TrangThai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lvh_TACGIA.Lvh_TenTG)
+    </td>
+    <td>
+        @Html.ActionLink("Lvh:Edit", "LvhEdit", new { id = item.Lvh_MaSach.Trim() }) |
+        @Html.ActionLink("Lvh:Details", "LvhDetails", new { id = item.Lvh_MaSach.Trim() }) |
+        @Html.ActionLink("Lvh:Delete", "LvhDelete", new { id = item.Lvh_MaSach.Trim() })
+    </td>
+</tr>
+}
+
+</table>

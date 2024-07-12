@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LeVinhHuy_2210900106Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lvh_SACH">
+    <Key>
+      <PropertyRef Name="Lvh_MaSach" />
+    </Key>
+    <Property Name="Lvh_MaSach" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Lvh_TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lvh_SoTrang" Type="Int32" />
+    <Property Name="Lvh_NamXB" Type="Int32" />
+    <Property Name="Lvh_MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Lvh_TrangThai" Type="Boolean" />
+    <NavigationProperty Name="Lvh_TACGIA" Relationship="Self.FK_Lvh_SACH_Lvh_TACGIA" FromRole="Lvh_SACH" ToRole="Lvh_TACGIA" />
+  </EntityType>
+  <EntityType Name="Lvh_TACGIA">
+    <Key>
+      <PropertyRef Name="Lvh_MaTG" />
+    </Key>
+    <Property Name="Lvh_MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Lvh_TenTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lvh_SACH" Relationship="Self.FK_Lvh_SACH_Lvh_TACGIA" FromRole="Lvh_TACGIA" ToRole="Lvh_SACH" />
+  </EntityType>
+  <Association Name="FK_Lvh_SACH_Lvh_TACGIA">
+    <End Role="Lvh_TACGIA" Type="Self.Lvh_TACGIA" Multiplicity="0..1" />
+    <End Role="Lvh_SACH" Type="Self.Lvh_SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lvh_TACGIA">
+        <PropertyRef Name="Lvh_MaTG" />
+      </Principal>
+      <Dependent Role="Lvh_SACH">
+        <PropertyRef Name="Lvh_MaTG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LeVinhHuy_2210900106Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lvh_SACH" EntityType="Self.Lvh_SACH" />
+    <EntitySet Name="Lvh_TACGIA" EntityType="Self.Lvh_TACGIA" />
+    <AssociationSet Name="FK_Lvh_SACH_Lvh_TACGIA" Association="Self.FK_Lvh_SACH_Lvh_TACGIA">
+      <End Role="Lvh_TACGIA" EntitySet="Lvh_TACGIA" />
+      <End Role="Lvh_SACH" EntitySet="Lvh_SACH" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
